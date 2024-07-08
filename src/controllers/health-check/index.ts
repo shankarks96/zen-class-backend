@@ -1,0 +1,1 @@
+export {ApiHealthCheckRouter} from './router';
