@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 10000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/test';
 const JWT_SECRET = process.env.JWT_SECRET || 'secret';
 const JWT_EXPIRATION = process.env.JWT_EXPIRATION || '1h';
