@@ -10,7 +10,6 @@
     "build": "tsc -p .",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "prestart": "npm run build",
     "predev": "npm run build",
     "prelint": "npm run build",
     "prelint:fix": "npm run build",
