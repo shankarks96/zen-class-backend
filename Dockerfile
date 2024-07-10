@@ -1,11 +1,17 @@
-FROM node:12.18.4 AS dep
-COPY ./dist /app/
-COPY ./package*.json /app/
+# Stage 1: Build
+FROM node:latest AS build
 WORKDIR /app
+COPY ./package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Stage 2: Production
+FROM node:latest
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/package*.json ./
 RUN npm install --production
 
-FROM node:18-slim
-COPY --from=dep /app /app
-WORKDIR /app
 EXPOSE 3000
-CMD ["server.js"]
+CMD ["node", "server.js"]
