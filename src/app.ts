@@ -1,9 +1,9 @@
 import cors from 'cors';
-import express, { NextFunction, Request, Response } from 'express';
+import express, {NextFunction, Request, Response} from 'express';
 import morganBody from 'morgan-body';
-import { AppRouter } from './routers';
+import {AppRouter} from './routers';
 import helmet from 'helmet';
-import { appConfig } from './config';
+import {appConfig} from './config';
 export const app: express.Application = express();
 app.use(express.json());
 app.use(helmet());
@@ -24,7 +24,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader('X-Request-ID', reqId);
   next();
 });
-app.use(helmet.referrerPolicy({ policy: 'no-referrer' }));
+app.use(helmet.referrerPolicy({policy: 'no-referrer'}));
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader(
     'Cache-Control',
@@ -46,8 +46,8 @@ app.use(cors());
 app.use('/api', AppRouter);
 app.set('port', appConfig.PORT);
 app.use((req: Request, res: Response) => {
-  res.status(404).json({ error: 'Not Found' });
+  res.status(404).json({error: 'Not Found'});
 });
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  res.status(500).json({ error: err.message });
+  res.status(500).json({error: err.message});
 });

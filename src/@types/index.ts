@@ -1,2 +1,2 @@
 export {Student} from './student.model';
-export {Request} from './request'
+export {Request} from './request';

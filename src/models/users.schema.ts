@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import {UserRoles} from '../utils/enums';
 import {UserStatus} from './../utils/enums';
-import { BaseSchema } from './base.model';
+import {BaseSchema} from './base.model';
 const {Schema} = mongoose;
 
 const UserSchema = new Schema(
@@ -51,7 +51,7 @@ const UserSchema = new Schema(
       enum: UserStatus,
       default: UserStatus.INACTIVE,
     },
-    ...BaseSchema
+    ...BaseSchema,
   },
   {
     versionKey: false,

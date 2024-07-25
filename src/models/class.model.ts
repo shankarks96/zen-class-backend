@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import { BaseSchema } from './base.model';
-import { SessionSchema } from './sessions.model';
+import {BaseSchema} from './base.model';
+import {SessionSchema} from './sessions.model';
 const {Schema} = mongoose;
 
 const ClassSchema = new Schema(
@@ -30,7 +30,7 @@ const ClassSchema = new Schema(
       type: Date,
       default: Date.now(),
     },
-    ...BaseSchema
+    ...BaseSchema,
   },
   {
     versionKey: false,

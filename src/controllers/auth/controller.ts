@@ -1,10 +1,14 @@
 import {Request, Response} from 'express';
-import { AuthService } from '../../services/auth.service';
+import {AuthService} from '../../services/auth.service';
 
 export class AuthController {
-  private static AuthService = new AuthService()
+  private static AuthService = new AuthService();
   public static async login(req: Request, res: Response): Promise<void> {
-    const data = await AuthController.AuthService.login(req.body.email, req.body.password, req.body.role);
+    const data = await AuthController.AuthService.login(
+      req.body.email,
+      req.body.password,
+      req.body.role
+    );
     res.status(200).json(data);
   }
   public static async logout(req: Request, res: Response): Promise<void> {

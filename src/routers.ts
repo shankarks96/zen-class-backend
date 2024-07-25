@@ -1,6 +1,10 @@
 import express from 'express';
 import {ApiHealthCheckRouter} from './controllers/health-check';
 import {AuthRouter} from './controllers/auth';
+import {StudentRouter} from './controllers/student';
+import {AdminManagementRouter} from './controllers/admin';
 export const AppRouter = express.Router();
 AppRouter.use('/api-health-check', ApiHealthCheckRouter);
 AppRouter.use('/auth', AuthRouter);
+AppRouter.use('/student', StudentRouter);
+AppRouter.use('/admin', AdminManagementRouter);

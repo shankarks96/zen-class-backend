@@ -219,200 +219,165 @@ export class ServiceUnavailable extends Error {
 export class AppExceptionHandler {
   public static handle(error: Error, res: Response) {
     if (error instanceof NotFountException) {
-      return res
-        .status(404)
-        .json({
-          message: error.message,
-          status: 404,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(404).json({
+        message: error.message,
+        status: 404,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof BadRequestException) {
-      return res
-        .status(400)
-        .json({
-          message: error.message,
-          status: 400,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(400).json({
+        message: error.message,
+        status: 400,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof UnauthorizedException) {
-      return res
-        .status(401)
-        .json({
-          message: error.message,
-          status: 401,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(401).json({
+        message: error.message,
+        status: 401,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof ForbiddenException) {
-      return res
-        .status(403)
-        .json({
-          message: error.message,
-          status: 403,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(403).json({
+        message: error.message,
+        status: 403,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof ConflictException) {
-      return res
-        .status(409)
-        .json({
-          message: error.message,
-          status: 409,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(409).json({
+        message: error.message,
+        status: 409,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof InternalServerErrorException) {
-      return res
-        .status(500)
-        .json({
-          message: error.message,
-          status: 500,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(500).json({
+        message: error.message,
+        status: 500,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof ServiceUnavailableException) {
-      return res
-        .status(503)
-        .json({
-          message: error.message,
-          status: 503,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(503).json({
+        message: error.message,
+        status: 503,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof GatewayTimeoutException) {
-      return res
-        .status(504)
-        .json({
-          message: error.message,
-          status: 504,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(504).json({
+        message: error.message,
+        status: 504,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof UnprocessableEntityException) {
-      return res
-        .status(422)
-        .json({
-          message: error.message,
-          status: 422,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(422).json({
+        message: error.message,
+        status: 422,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof TooManyRequestsException) {
-      return res
-        .status(429)
-        .json({
-          message: error.message,
-          status: 429,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(429).json({
+        message: error.message,
+        status: 429,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof NotImplemented) {
-      return res
-        .status(501)
-        .json({
-          message: error.message,
-          status: 501,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(501).json({
+        message: error.message,
+        status: 501,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof PaymentRequired) {
-      return res
-        .status(402)
-        .json({
-          message: error.message,
-          status: 402,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(402).json({
+        message: error.message,
+        status: 402,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof RequestTimeout) {
-      return res
-        .status(408)
-        .json({
-          message: error.message,
-          status: 408,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(408).json({
+        message: error.message,
+        status: 408,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof Conflict) {
-      return res
-        .status(409)
-        .json({
-          message: error.message,
-          status: 409,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(409).json({
+        message: error.message,
+        status: 409,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof Gone) {
-      return res
-        .status(410)
-        .json({
-          message: error.message,
-          status: 410,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(410).json({
+        message: error.message,
+        status: 410,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof LengthRequired) {
-      return res
-        .status(411)
-        .json({
-          message: error.message,
-          status: 411,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(411).json({
+        message: error.message,
+        status: 411,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof PreconditionFailed) {
-      return res
-        .status(412)
-        .json({
-          message: error.message,
-          status: 412,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(412).json({
+        message: error.message,
+        status: 412,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof PayloadTooLarge) {
-      return res
-        .status(413)
-        .json({
-          message: error.message,
-          status: 413,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(413).json({
+        message: error.message,
+        status: 413,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     } else if (error instanceof URITooLong) {
-      return res
-        .status(414)
-        .json({
-          message: error.message,
-          status: 414,
-          error: error,
-          stack: error.stack,
-          name: error.name,
-        });
+      return res.status(414).json({
+        message: error.message,
+        status: 414,
+        error: error,
+        stack: error.stack,
+        name: error.name,
+      });
     }
 
     return res.status(500).json({
-      message: 'Internal server error', status: 500, error: error, stack: error.stack, name: error.name,
-      
+      message: 'Internal server error',
+      status: 500,
+      error: error,
+      stack: error.stack,
+      name: error.name,
     });
   }
 }

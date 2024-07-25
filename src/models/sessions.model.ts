@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { BaseSchema } from './base.model';
+import {BaseSchema} from './base.model';
 const {Schema} = mongoose;
 const SessionContentsSchema = new Schema({
   name: {
@@ -7,7 +7,7 @@ const SessionContentsSchema = new Schema({
     required: true,
     trim: true,
   },
-})
+});
 const MentorSchema = new Schema({
   _id: {
     type: Schema.Types.ObjectId,
@@ -26,8 +26,8 @@ const MentorSchema = new Schema({
   comment: {
     type: String,
     default: '',
-  }
-})
+  },
+});
 export const SessionSchema = new Schema(
   {
     name: {
@@ -61,7 +61,7 @@ export const SessionSchema = new Schema(
       default: [],
       required: false,
     },
-    ...BaseSchema
+    ...BaseSchema,
   },
   {
     versionKey: false,
